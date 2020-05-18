@@ -1,3 +1,4 @@
+import 'package:Controlle_Interno/layout.dart';
 import 'package:flutter/material.dart';
 import 'package:Controlle_Interno/pages/home.dart';
 import 'package:Controlle_Interno/pages/about.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
       title: 'CSI',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.indigo,
+        primaryColor: Layout.primary(),// Alterando as cores
         accentColor: Colors.indigoAccent,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),

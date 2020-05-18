@@ -8,10 +8,16 @@ class Layout{
     return Scaffold(
       drawer: NavDrawer(),
       appBar: AppBar(
-        backgroundColor: Color.fromRGBO(67, 73, 232, 1),
+        backgroundColor: primary(),
         title: Text('Controlle Interno - CSI'),
       ),
       body: content,
     );
   }
+// Colors
+
+  static Color primary([ double opacity = 1 ]) => Color.fromRGBO(67, 73, 232, opacity);
+  //static Color primary([ double opacity = 1 ]) => Color.fromRGBO(67, 73, 22, opacity);
+
+
 }
