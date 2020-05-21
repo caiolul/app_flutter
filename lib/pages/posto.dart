@@ -9,7 +9,8 @@ class PostoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final content = Center(
-      child: Text("Posto"),
+      child: Text("Posto",
+      style: TextStyle(fontSize: 74),),
     );
     return Layout.getContent(context, content);
   }

@@ -9,7 +9,8 @@ class FeedbackPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final content = Center(
-      child: Text("FeedBack"),
+      child: Text("FeedBack",
+      style: TextStyle(fontSize: 74),),
     );
     return Layout.getContent(context, content);
   }

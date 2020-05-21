@@ -9,7 +9,9 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final content = Center(
-      child: Text("Home"),
+      child: Text("Home",
+      style: TextStyle(fontSize: 74, color: Layout.navColor()),
+      ),
     );
     return Layout.getContent(context, content);
   }
