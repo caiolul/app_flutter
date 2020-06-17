@@ -1,9 +1,12 @@
+import 'package:Controlle_Interno/pages/login/login_page.dart';
 import 'package:flutter/material.dart';
-import 'package:Controlle_Interno/pages/home.dart';
 import 'package:Controlle_Interno/pages/about.dart';
 import 'package:Controlle_Interno/pages/prefeitura.dart';
 import 'package:Controlle_Interno/pages/posto.dart';
 import 'package:Controlle_Interno/pages/feedback.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:Controlle_Interno/bloc/authentication_bloc.dart';
+
 
 
 class NavDrawer extends StatelessWidget {
@@ -25,11 +28,6 @@ class NavDrawer extends StatelessWidget {
                     image: AssetImage('assets/img/logo.jpeg'))),
           ),
           ListTile(
-            leading: Icon(Icons.input),
-            title: Text('Bem Vindo'),
-            onTap: () => {Navigator.of(context).pushNamed(MyHomePage.tag)},
-          ),
-          ListTile(
             leading: Icon(Icons.local_gas_station),
             title: Text('Posto'),
             onTap: () => {Navigator.of(context).pushNamed(PostoPage.tag)},
@@ -47,7 +45,10 @@ class NavDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.exit_to_app),
             title: Text('Logout'),
-            onTap: () => {Navigator.of(context).pop()},
+             onTap: () => {Navigator.of(context).pushNamed(LoginPage.tag)}
+            //(BlocProvider.of<AuthenticationBloc>(context)
+            // ).add(LoggedOut()),
+            
           ),
           ListTile(
             leading: Icon(Icons.info_outline),

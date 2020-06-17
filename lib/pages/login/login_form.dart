@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:Controlle_Interno/login/bloc/login_bloc.dart';
+import 'package:Controlle_Interno/pages/login/bloc/login_bloc.dart';
 
 class LoginForm extends StatefulWidget {
   @override
@@ -46,7 +46,7 @@ class _LoginFormState extends State<LoginForm> {
                     ),
                     TextFormField(
                       decoration: InputDecoration(
-                          labelText: 'password', icon: Icon(Icons.security)),
+                          labelText: 'password', icon: Icon(Icons.vpn_key)),
                       controller: _passwordController,
                       obscureText: true,
                     ),

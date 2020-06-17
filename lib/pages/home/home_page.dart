@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:Controlle_Interno/widgets/side_menu.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:Controlle_Interno/bloc/authentication_bloc.dart';
 
@@ -6,6 +7,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: NavDrawer(),
       appBar: AppBar(
         title: Text('Home | Home Hub'),
       ),
@@ -16,7 +18,7 @@ class HomePage extends StatelessWidget {
           children: <Widget>[
             Padding(padding: EdgeInsets.only(left: 30.0),
             child: Text(
-              'Welcome',
+              'Bem Vindo',
               style: TextStyle(
                 fontSize: 24.0,
               ),

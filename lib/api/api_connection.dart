@@ -3,8 +3,8 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:Controlle_Interno/model/api_user.dart';
 
-final _base = "http://localhost:8000";
-final _tokenEndpoint = "/api-token-auth/";
+final _base = "http://192.168.1.3:8000";
+final _tokenEndpoint = "/api/user/";
 final _tokenURL = _base + _tokenEndpoint;
 
 Future<Token> getToken(UserLogin userLogin) async {

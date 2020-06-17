@@ -1,11 +1,11 @@
-// import 'package:Controlle_Interno/layout.dart';
-// import 'package:flutter/material.dart';
-// import 'package:flutter/services.dart';
-// import 'package:Controlle_Interno/pages/home.dart';
-// import 'package:Controlle_Interno/pages/about.dart';
-// import 'package:Controlle_Interno/pages/prefeitura.dart';
-// import 'package:Controlle_Interno/pages/posto.dart';
-// import 'package:Controlle_Interno/pages/feedback.dart';
+//import 'package:Controlle_Interno/layout.dart';
+//import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+//import 'package:Controlle_Interno/pages/home.dart';
+import 'package:Controlle_Interno/pages/about.dart';
+import 'package:Controlle_Interno/pages/prefeitura.dart';
+import 'package:Controlle_Interno/pages/posto.dart';
+import 'package:Controlle_Interno/pages/feedback.dart';
 
 
 // void main() => runApp(MyApp());
@@ -42,9 +42,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:Controlle_Interno/repository/user_repository.dart';
 
 import 'package:Controlle_Interno/bloc/authentication_bloc.dart';
-import 'package:Controlle_Interno/splash/splash.dart';
-import 'package:Controlle_Interno/login/login_page.dart';
-import 'package:Controlle_Interno/home/home.dart';
+import 'package:Controlle_Interno/pages/splash/splash.dart';
+import 'package:Controlle_Interno/pages/login/login_page.dart';
+import 'package:Controlle_Interno/pages/home/home.dart';
 import 'package:Controlle_Interno/common/common.dart';
 
 class SimpleBlocDelegate extends BlocDelegate {
@@ -85,13 +85,23 @@ void main() {
 class MyApp extends StatelessWidget {
   final UserRepository userRepository;
 
+  final routes = <String, WidgetBuilder> {
+      LoginPage.tag: (context) => LoginPage(),
+      AboutPage.tag: (context) => AboutPage(),
+      FeedbackPage.tag: (context) => FeedbackPage(),
+      PrefeituraPage.tag: (context) => PrefeituraPage(),
+      PostoPage.tag: (context) => PostoPage(),
+    };
+
   MyApp({Key key, @required this.userRepository}) : super(key: key);
 
   @override
   Widget build (BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'CSI',
       theme: ThemeData(
-        primarySwatch: Colors.red,
+        primarySwatch: Colors.indigo,
         brightness: Brightness.dark,
       ),
       home: BlocBuilder<AuthenticationBloc, AuthenticationState>(
@@ -110,6 +120,7 @@ class MyApp extends StatelessWidget {
           }
         },
       ),
+      routes: routes,
     );
   }
 }

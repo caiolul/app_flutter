@@ -4,11 +4,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:Controlle_Interno/repository/user_repository.dart';
 
 import 'package:Controlle_Interno/bloc/authentication_bloc.dart';
-import 'package:Controlle_Interno/login/bloc/login_bloc.dart';
-import 'package:Controlle_Interno/login/login_form.dart';
+import 'package:Controlle_Interno/pages/login/bloc/login_bloc.dart';
+import 'package:Controlle_Interno/pages/login/login_form.dart';
+//import 'package:Controlle_Interno/widgets/side_menu.dart';
+
 
 class LoginPage extends StatelessWidget {
   final UserRepository userRepository;
+   static String tag = 'login-page';
 
   LoginPage({Key key, @required this.userRepository})
       : assert(userRepository != null),
